@@ -21,6 +21,7 @@ metadata:
   labels:
     {{ include "timescaledb-helm.labels" . | nindent 4 }}
     app.kubernetes.io/component: patroni
+    sidecar.istio.io/inject: "false"
   annotations:
     "helm.sh/hook": post-upgrade
     "helm.sh/hook-delete-policy": hook-succeeded
